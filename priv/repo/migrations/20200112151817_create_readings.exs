@@ -5,7 +5,9 @@ defmodule CheeseServer.Repo.Migrations.CreateReadings do
     create table(:readings) do
       add :reading_category_id, references("reading_categories")
       add :value, :decimal
-      add :timestamp, :utc_datetime
+      add :reading_at, :utc_datetime
+
+      timestamps()
     end
   end
 end

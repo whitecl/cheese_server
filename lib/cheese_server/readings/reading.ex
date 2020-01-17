@@ -7,7 +7,7 @@ defmodule CheeseServer.Readings.Reading do
   schema "readings" do
     belongs_to :reading_category, ReadingCategory
     field :value, :decimal
-    field :timestamp, :utc_datetime
+    field :reading_at, :utc_datetime
 
     timestamps()
   end
@@ -15,7 +15,7 @@ defmodule CheeseServer.Readings.Reading do
   @doc false
   def changeset(reading, attrs) do
     reading
-    |> cast(attrs, [:reading_category_id, :value, :timestamp])
-    |> validate_required([:reading_category_id, :value, :timestamp])
+    |> cast(attrs, [:reading_category_id, :value, :reading_at])
+    |> validate_required([:reading_category_id, :value, :reading_at])
   end
 end
