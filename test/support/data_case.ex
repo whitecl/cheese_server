@@ -24,6 +24,7 @@ defmodule CheeseServer.DataCase do
       import Ecto.Changeset
       import Ecto.Query
       import CheeseServer.DataCase
+      import CheeseServer.Factory
     end
   end
 
