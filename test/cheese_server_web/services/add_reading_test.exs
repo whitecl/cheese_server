@@ -5,7 +5,11 @@ defmodule CheeseServer.Services.AddReadingTest do
 
   describe "perform/1" do
     test "it creates and returns reading based on the passed arguments" do
-      args = %{name: "Reading Category", value: 12.2, reading_at: DateTime.truncate(DateTime.utc_now, :second)}
+      args = %{
+        category_name: "Reading Category",
+        value: 12.2,
+        reading_at: DateTime.to_unix(DateTime.utc_now)
+      }
       {:ok, result} = AddReading.perform(args)
 
       assert result.value == 12.2
